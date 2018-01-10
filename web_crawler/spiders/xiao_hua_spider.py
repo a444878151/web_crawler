@@ -35,4 +35,5 @@ class XiaoHuaSpider(scrapy.spiders.Spider):
                 ab_src = "http://www.xiaohuar.com" + src[0]
                 file_name = "%s_%s.jpg" % (
                 school[0].encode('utf-8'), name[0].encode('utf-8'))
+                #发送钉钉图片
                 send_photo(str(ab_src), str(file_name), "校花")
