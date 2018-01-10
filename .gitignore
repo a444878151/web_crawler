@@ -1,0 +1,9 @@
+*~
+.idea/*
+*.iml
+*.ipr
+*.iws
+*.pyc
+.DS_Store
+util/*.log
+util/*.log.*
