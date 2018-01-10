@@ -6,3 +6,4 @@
 .DS_Store
 util/*.log
 util/*.log.*
+web_crawler/config.py
