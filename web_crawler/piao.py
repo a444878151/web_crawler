@@ -3,9 +3,10 @@
 import requests
 import json
 import time
+from config import ding_talk_token_long
 
 #钉钉机器人token
-ding_token = 'xxxxxxxxxxx'
+ding_token = ding_talk_token_long
 
 
 #发送钉钉消息
@@ -22,7 +23,7 @@ def send_ding_talk(param):
 if __name__ == '__main__':
 
     #列次日期
-    date = '2018-02-21'
+    date = '2018-02-23'
     #列次发车开始时间--小时
     start_hour = 10
     #列次发车结束时间--小时
@@ -63,7 +64,7 @@ if __name__ == '__main__':
                 #发车开始时间--小时
                 btime_h = int(btime.encode("UTF-8").split(':')[0])
                 #G字列车 并且时间在选择范围
-                if gtype.startswith('G') and btime_h >= start_hour and btime <= end_hour:
+                if gtype.startswith('G') and btime_h >= start_hour and btime_h <= end_hour:
                     #这里判断一等、二等座 有票或票数大于一的情况  发钉钉提醒
                     if (zuo_1 != '' and zuo_1 != u'无' and (zuo_1 == u'有' or int(zuo_1.encode("UTF-8")) >= 1)) or (zuo_2 != '' and zuo_2 != u'无' and (zuo_2 == u'有' or int(zuo_2.encode("UTF-8")) >= 1)):
                         print result
